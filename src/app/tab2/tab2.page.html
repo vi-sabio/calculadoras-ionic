@@ -1,0 +1,123 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>
+      CALCULADORA 2
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="dark">
+  <ion-item color="dark">
+    <ion-label position="stacked">Operação:</ion-label>
+    <ion-input [(ngModel)]="operacao"></ion-input>
+  </ion-item>
+  <ion-item color="dark">
+    <ion-label>Resultado: {{resultado}}</ion-label>
+  </ion-item>
+  <ion-grid>
+    <ion-row >
+      <ion-col>
+        <ion-button expand="full" size="small" color="dark" >MC</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" size="small" color="dark">MR</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" size="small" color="dark">M+</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" size="small" color="dark">M-</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" size="small" color="dark">MS</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" size="small" color="dark">M</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="margin-off">
+      <ion-col>
+        <ion-button expand="full" color="medium">%</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" color="medium">CE</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" color="medium">C</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" color="medium"><ion-icon name="backspace-outline"></ion-icon></ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full" color="medium">1/x</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" color="medium">x²</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" color="medium">²√x</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" color="medium">÷</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full" color="light">7</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" color="light">8</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" color="light">9</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" color="medium">X</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full" color="light">4</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" color="light">5</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" color="light">6</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" color="medium">-</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full" color="light">1</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" color="light">2</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" color="light">3</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" color="medium">+</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full" color="light">+/-</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" color="light">0</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" color="light">,</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" color="success">=</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

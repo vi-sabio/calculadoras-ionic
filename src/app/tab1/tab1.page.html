@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>CALCULADORA</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="solid" color="success" (click)="limpar()">Limpar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="dark">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item color="dark">
+          <ion-label position="floating">Valor 1: </ion-label>
+          <ion-input [(ngModel)]="valor1"></ion-input>
+        </ion-item>
+      </ion-col>
+
+      <ion-col>
+        <ion-item color="dark">
+          <ion-label position="floating">Valor 2: </ion-label>
+          <ion-input [(ngModel)]="valor2"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button color="medium" expand="full" (click)="soma()">+</ion-button>
+      </ion-col>
+      <ion-col>
+
+        <ion-button color="medium" expand="full" (click)="subtrair()">-</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="medium" expand="full" (click)="multiplicar()">*</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="medium" expand="full" (click)="dividir()">/</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button color="medium" expand="full" (click)="maior()">Maior</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="medium" expand="full" (click)="menor()">Menor</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+  <ion-item color="dark">
+    <ion-label>Resultado: {{resultado}}</ion-label>
+    <!--interpolação-->
+  </ion-item>
+  <ion-item color="dark">
+    <ion-label>Conta: {{conta}}</ion-label>
+    <!--interpolação-->
+  </ion-item>
+</ion-content>
