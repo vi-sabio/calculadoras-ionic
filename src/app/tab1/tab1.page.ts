@@ -4,25 +4,22 @@ import { AlertController } from '@ionic/angular';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
+  styleUrls: ['tab1.page.scss'],
 })
 export class Tab1Page {
   valor1 = '';
   valor2 = '';
   resultado = '';
-  conta ='';
+  conta = '';
 
-  constructor(private alertController: AlertController) { }
+  constructor(private alertController: AlertController) {}
 
   async soma() {
-
-    let soma = parseFloat(this.valor1) + parseFloat(this.valor2);
-
+    const soma = parseFloat(this.valor1) + parseFloat(this.valor2);
 
     let msg = '<p><b>Valor 1: </b>' + this.valor1 + '</p>';
     msg += `<p><b>Valor 2: </b> ${this.valor2} </p>`;
-    msg += `<p><b>Resultado: </b> ${soma} </p>`
-
+    msg += `<p><b>Resultado: </b> ${soma} </p>`;
 
     const alert = await this.alertController.create({
       header: 'RESULTADO',
@@ -31,19 +28,16 @@ export class Tab1Page {
     });
 
     await alert.present();
-    this.mostrarResultadoConta(soma,'Adição');
+    this.mostrarResultadoConta(soma, 'Adição');
   }
 
-
   async subtrair() {
-
-    let subtrair = parseFloat(this.valor1) - parseFloat(this.valor2);
+    const subtrair = parseFloat(this.valor1) - parseFloat(this.valor2);
 
     let msg = '<p><b>Valor 1: </b>' + this.valor1 + '</p>';
     msg += `<p><b>Valor 2: </b> ${this.valor2} </p>`;
     msg += `<p><b>Resultado: </b> ${subtrair} </p>`;
 
-
     const alert = await this.alertController.create({
       header: 'RESULTADO',
       message: msg,
@@ -51,20 +45,16 @@ export class Tab1Page {
     });
 
     await alert.present();
-    this.mostrarResultadoConta(subtrair,'Subtração');
+    this.mostrarResultadoConta(subtrair, 'Subtração');
   }
 
-
-
   async multiplicar() {
-
-    let mult = parseFloat(this.valor1) * parseFloat(this.valor2);
+    const mult = parseFloat(this.valor1) * parseFloat(this.valor2);
 
     let msg = '<p><b>Valor 1: </b>' + this.valor1 + '</p>';
     msg += `<p><b>Valor 2: </b> ${this.valor2} </p>`;
     msg += `<p><b>Resultado: </b> ${mult} </p>`;
 
-
     const alert = await this.alertController.create({
       header: 'RESULTADO',
       message: msg,
@@ -72,18 +62,16 @@ export class Tab1Page {
     });
 
     await alert.present();
-    this.mostrarResultadoConta(mult,'Multiplicação');
+    this.mostrarResultadoConta(mult, 'Multiplicação');
   }
 
   async dividir() {
-
-    let dividir = parseFloat(this.valor1) / parseFloat(this.valor2);
+    const dividir = parseFloat(this.valor1) / parseFloat(this.valor2);
 
     let msg = '<p><b>Valor 1: </b>' + this.valor1 + '</p>';
     msg += `<p><b>Valor 2: </b> ${this.valor2} </p>`;
     msg += `<p><b>Resultado: </b> ${dividir} </p>`;
 
-
     const alert = await this.alertController.create({
       header: 'RESULTADO',
       message: msg,
@@ -91,25 +79,20 @@ export class Tab1Page {
     });
 
     await alert.present();
-    this.mostrarResultadoConta(dividir,'Divisão');
+    this.mostrarResultadoConta(dividir, 'Divisão');
   }
 
-
-
-
   async maior() {
-
     let maior;
     if (parseFloat(this.valor1) > parseFloat(this.valor2)) {
       maior = parseFloat(this.valor1);
-    }else{
+    } else {
       maior = parseFloat(this.valor2);
     }
 
     let msg = '<p><b>Valor 1: </b>' + this.valor1 + '</p>';
     msg += `<p><b>Valor 2: </b> ${this.valor2} </p>`;
     msg += `<p><b>Resultado: </b> ${maior} </p>`;
-
 
     const alert = await this.alertController.create({
       header: 'RESULTADO',
@@ -121,17 +104,15 @@ export class Tab1Page {
   }
 
   async menor() {
-
     let menor;
     if (parseFloat(this.valor1) < parseFloat(this.valor2)) {
       menor = parseFloat(this.valor1);
-    }else{
+    } else {
       menor = parseFloat(this.valor2);
     }
     let msg = '<p><b>Valor 1: </b>' + this.valor1 + '</p>';
     msg += `<p><b>Valor 2: </b> ${this.valor2} </p>`;
     msg += `<p><b>Resultado: </b> ${menor} </p>`;
-
 
     const alert = await this.alertController.create({
       header: 'RESULTADO',
@@ -144,16 +125,15 @@ export class Tab1Page {
     await alert.present();
   }
 
-  async mostrarResultadoConta(valor,conta){
+  async mostrarResultadoConta(valor, conta) {
     this.resultado = valor;
     this.conta = conta;
   }
 
-  async limpar(){
+  async limpar() {
     this.resultado = '';
     this.conta = '';
     this.valor1 = '';
     this.valor2 = '';
   }
-
 }
