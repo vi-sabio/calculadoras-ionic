@@ -19,13 +19,13 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <ion-button (click)="limparMemoria()" expand="full" size="small" color="dark">MC</ion-button>
+        <ion-button (click)="apagarMemoria()" expand="full" size="small" color="dark">MC</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="mostrarMemoria()" expand="full" size="small" color="dark">MR</ion-button>
+        <ion-button (click)="exibirResultadoMemoria()" expand="full" size="small" color="dark">MR</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="somarMemoria()" expand="full" size="small" color="dark">M+</ion-button>
+        <ion-button (click)="adicaoMemoria()" expand="full" size="small" color="dark">M+</ion-button>
       </ion-col>
       <ion-col>
         <ion-button (click)="subtrairMemoria()" expand="full" size="small" color="dark">M-</ion-button>
@@ -40,7 +40,7 @@
         >
       </ion-col>
       <ion-col>
-        <ion-button expand="full" size="small" color="dark">M</ion-button>
+        <ion-button (click)="mostrarMemoria()" expand="full" size="small" color="dark">M</ion-button>
       </ion-col>
     </ion-row>
     <ion-row class="margin-off">

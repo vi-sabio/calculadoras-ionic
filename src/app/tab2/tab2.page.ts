@@ -1,7 +1,9 @@
+import { MemoriaModalPage } from './../utils/memoria-modal/memoria-modal.page';
 import { AlertController } from '@ionic/angular';
 import { IMemoria } from './../models/IMemoria.model';
 import { Component } from '@angular/core';
 import { evaluate } from 'mathjs';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab2',
@@ -18,7 +20,10 @@ export class Tab2Page {
 
   memoria: IMemoria[] = [];
 
-  constructor(private alertController: AlertController) {}
+  constructor(
+    private alertController: AlertController,
+    private modalCtrl: ModalController
+  ) {}
 
   adicionarMemoria() {
     if (this.operacao !== '' && this.resultado !== '') {
@@ -79,7 +84,6 @@ export class Tab2Page {
     this.resultado = '';
     this.operacao = '';
     //this.numero = false;
-    this.memoria = [];
   }
 
   apagarCaracter() {
@@ -96,11 +100,52 @@ export class Tab2Page {
     }
   }
 
-  mostrarMemoria() {}
+  apagarMemoria() {
+    this.memoria = [];
+  }
 
-  somarMemoria() {}
+  exibirResultadoMemoria() {
+    const memoria = this.memoria[this.memoria.length - 1];
 
-  subtrairMemoria() {}
+    if (memoria == null) {
+      return;
+    }
+
+    this.operacao = memoria.operacao;
+    this.resultado = memoria.resultado.toString();
+
+    console.log('Memoria: ', this.memoria);
+  }
+
+  adicaoMemoria() {
+    if (this.operacao !== '') {
+      this.calcularResultado();
+
+      const memoria = this.memoria[this.memoria.length - 1];
+      const novaMemoria: IMemoria = {
+        operacao: `${this.resultado} + ${memoria.resultado}`,
+        resultado: Number(this.resultado) + memoria.resultado,
+      };
+
+      this.memoria.push(novaMemoria);
+      console.log('Adicionou: ', this.memoria);
+    }
+  }
+
+  subtrairMemoria() {
+    if (this.operacao !== '') {
+      this.calcularResultado();
+
+      const memoria = this.memoria[this.memoria.length - 1];
+      const novaMemoria: IMemoria = {
+        operacao: `${memoria.resultado} - ${this.resultado}`,
+        resultado: memoria.resultado - Number(this.resultado),
+      };
+
+      this.memoria.push(novaMemoria);
+      console.log('Adicionou: ', this.memoria);
+    }
+  }
 
   async presentAlert(titulo: string, mensagem: string) {
     const alert = await this.alertController.create({
@@ -110,5 +155,15 @@ export class Tab2Page {
     });
 
     alert.present();
+  }
+
+  async mostrarMemoria() {
+    const modal = await this.modalCtrl.create({
+      component: MemoriaModalPage,
+      componentProps: {
+        memoria: this.memoria,
+      },
+    });
+    modal.present();
   }
 }
