@@ -1,34 +1,37 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="dark">
-    <ion-title> CALCULADORA 2 </ion-title>
+    <ion-title><h1><i> CALCULADORA 2 </i></h1></ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="solid" color="danger">Voltar</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" color="dark">
   <ion-item color="dark">
-    <ion-label position="stacked">Operação:</ion-label>
+    <ion-label position="stacked"><i>Operação:</i></ion-label>
     <ion-input
       class="ion-text-right operacao"
       [(ngModel)]="operacao"
     ></ion-input>
   </ion-item>
   <ion-item color="dark">
-    <ion-label>Resultado:</ion-label>
+    <ion-label><i>Resultado:</i></ion-label>
     <ion-label class="ion-text-right resultado">{{resultado}}</ion-label>
   </ion-item>
   <ion-grid>
     <ion-row>
       <ion-col>
-        <ion-button (click)="apagarMemoria()" expand="full" size="small" color="dark">MC</ion-button>
+        <ion-button (click)="apagarMemoria()" expand="full" size="small" color="dark"> <i>MC</i> </ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="exibirResultadoMemoria()" expand="full" size="small" color="dark">MR</ion-button>
+        <ion-button (click)="exibirResultadoMemoria()" expand="full" size="small" color="dark"> <i>MR</i> </ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="adicaoMemoria()" expand="full" size="small" color="dark">M+</ion-button>
+        <ion-button (click)="adicaoMemoria()" expand="full" size="small" color="dark"> <i>M+</i> </ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="subtrairMemoria()" expand="full" size="small" color="dark">M-</ion-button>
+        <ion-button (click)="subtrairMemoria()" expand="full" size="small" color="dark"> <i>M-</i> </ion-button>
       </ion-col>
       <ion-col>
         <ion-button
@@ -36,11 +39,11 @@
           (click)="adicionarMemoria()"
           size="small"
           color="dark"
-          >MS</ion-button
+          > <i>MS</i> </ion-button
         >
       </ion-col>
       <ion-col>
-        <ion-button (click)="mostrarMemoria()" expand="full" size="small" color="dark">M</ion-button>
+        <ion-button (click)="mostrarMemoria()" expand="full" size="small" color="dark"> <i>M</i> </ion-button>
       </ion-col>
     </ion-row>
     <ion-row class="margin-off">
@@ -49,16 +52,16 @@
       </ion-col>
       <ion-col>
         <ion-button (click)="limparOperacao()" expand="full" color="medium"
-          >CE</ion-button
+          > <i>CE</i> </ion-button
         >
       </ion-col>
       <ion-col>
         <ion-button (click)="limparMemoria()" expand="full" color="medium"
-          >C</ion-button
+          > <i>C</i> </ion-button
         >
       </ion-col>
       <ion-col>
-        <ion-button (click)="apagarCaracter()" expand="full" color="medium"
+        <ion-button (click)="apagarCaracter()" expand="full" color="danger"
           ><ion-icon name="backspace-outline"></ion-icon
         ></ion-button>
       </ion-col>

@@ -1,8 +1,9 @@
+
 <ion-header [translucent]="true">
   <ion-toolbar color="dark">
-    <ion-title>CALCULADORA</ion-title>
+    <ion-title> <h1><i>CALCULADORA</i></h1></ion-title>
     <ion-buttons slot="end">
-      <ion-button fill="solid" color="success" (click)="limpar()">Limpar</ion-button>
+      <ion-button fill="solid" color="danger" (click)="limpar()">Limpar</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -13,50 +14,50 @@
     <ion-row>
       <ion-col>
         <ion-item color="dark">
-          <ion-label position="floating">Valor 1: </ion-label>
+          <ion-label position="floating"><i>Valor 1: </i></ion-label>
           <ion-input [(ngModel)]="valor1"></ion-input>
         </ion-item>
       </ion-col>
 
       <ion-col>
         <ion-item color="dark">
-          <ion-label position="floating">Valor 2: </ion-label>
+          <ion-label position="floating"><i>Valor 2: </i></ion-label>
           <ion-input [(ngModel)]="valor2"></ion-input>
         </ion-item>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-button color="medium" expand="full" (click)="soma()">+</ion-button>
+        <ion-button color="primary" expand="full" (click)="soma()">+</ion-button>
       </ion-col>
       <ion-col>
 
-        <ion-button color="medium" expand="full" (click)="subtrair()">-</ion-button>
+        <ion-button color="primary" expand="full" (click)="subtrair()">-</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button color="medium" expand="full" (click)="multiplicar()">*</ion-button>
+        <ion-button color="primary" expand="full" (click)="multiplicar()">*</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button color="medium" expand="full" (click)="dividir()">/</ion-button>
+        <ion-button color="primary" expand="full" (click)="dividir()">/</ion-button>
       </ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col>
-        <ion-button color="medium" expand="full" (click)="maior()">Maior</ion-button>
+        <ion-button color="warning" expand="full" (click)="maior()"><sub>Maior</sub></ion-button>
       </ion-col>
       <ion-col>
-        <ion-button color="medium" expand="full" (click)="menor()">Menor</ion-button>
+        <ion-button color="warning" expand="full" (click)="menor()"><sub>Menor</sub></ion-button>
       </ion-col>
     </ion-row>
 
   </ion-grid>
   <ion-item color="dark">
-    <ion-label>Resultado: {{resultado}}</ion-label>
+    <ion-label><i>Resultado: {{resultado}}</i></ion-label>
     <!--interpolação-->
   </ion-item>
   <ion-item color="dark">
-    <ion-label>Conta: {{conta}}</ion-label>
+    <ion-label><i>Conta: {{conta}}</i></ion-label>
     <!--interpolação-->
   </ion-item>
 </ion-content>
